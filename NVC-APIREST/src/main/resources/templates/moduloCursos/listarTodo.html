@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/datatables.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/miLogin.css" rel="stylesheet" type="text/css" />
+<link href="../css/miLayout.css" rel="stylesheet" type="text/css" />
+<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/estilos.css" rel="stylesheet" type="text/css">
+<title>Cursos</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-light" style="background-color: #0e2b3f;">
+		<div class="container-fluid">
+                <a class="navbar-brand" th:href="@{/bienvenida}">
+                    <img class="d-inline-block" src="../imagenes/Logo.jpeg" alt="Logo NVConsulting" width="250" height="75">
+                </a>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    Menú
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link text-light active" aria-current="page" th:href="@{/bienvenida}">Inicio</a>
+                        <a class="nav-item nav-link text-light" th:href="@{/cursos/listarTodo}">Cursos</a>
+                        <a class="nav-item nav-link text-light" th:href="@{/nosotros}">Nosotros</a>
+                        <a class="nav-item nav-link text-light" th:href="@{/userForm}">Usuarios</a>
+                        <a class="nav-item nav-link text-light" href="#">Contacto</a>
+                        <a class="nav-item nav-link text-light disabled">Ayuda</a>
+                    </div>
+                </div>
+         </div>
+	</nav>
+	<section id="seccion1">
+	<div>
+		<div align="center">
+				<h1>Cursos</h1>
+				<a sec:authorize="hasRole('ADMIN')" th:href="@{/cursos/nuevo}">Nuevo Curso</a> <br />				
+				<a sec:authorize="hasRole('ADMIN')" th:href="@{/ReporteDeCursos}">Generar Reporte</a>
+				<br />
+				<table id="ejemplo1" class="table table-striped table-bordered dt-responsive nowrap" style="width: 100%">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nombre</th>
+							<th>Duracion</th>
+							<th>Fecha Inicio</th>
+							<th>Fecha Fin</th>
+							<th>Precio</th>
+							<th>Estado</th>
+							<th>Empleado</th>
+							<th sec:authorize="hasRole('ADMIN')">Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="curso : ${listaCursos}">
+							<td th:text="${curso.ID_CURSOS}">Id</td>
+							<td th:text="${curso.NOMBRE}">Nombre</td>
+							<td th:text="${curso.NRO_HORAS}">Duracion</td>
+							<td th:text="${curso.FECHA_INICIO}">Fecha Inicio</td>
+							<td th:text="${curso.FECHA_FIN}">Fecha Fin</td>
+							<td th:text="${curso.PRECIO_CURSO}">Precio</td>
+							<td th:text="${curso.ESTADO}">Estado</td>
+							<td th:text="${curso.ID_EMPLEADOS.NOMBRES}">Empleado</td>
+							<td sec:authorize="hasRole('ADMIN')">
+								<a th:href="@{/cursos/actualizar/{id}(id=${curso.ID_CURSOS})}">Actualizar</a>
+								&nbsp;&nbsp;&nbsp; 
+								<a th:href="@{/cursos/eliminar/{id}(id=${curso.ID_CURSOS})}">Eliminar</a>								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../js/datatables.min.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+		$('#ejemplo1').DataTable({
+			language : {
+				"decimal" : "",
+				"emptyTable" : "Datos no disponibles en la tabla",
+				"info" : "Mostrando _START_ a _END_ de _TOTAL_ registros",
+				"infoEmpty" : "Mostrando 0 a 0 de 0 registros",
+				"infoFiltered" : "(Filtrado de _MAX_ registros totales)",
+				"infoPostFix" : "",
+				"thousands" : ",",
+				"lengthMenu" : "Mostrando _MENU_ registros",
+				"loadingRecords" : "Cargando...",
+				"processing" : "Procesando...",
+				"search" : "Buscar:",
+				"zeroRecords" : "No se encontraron registros para la búsqueda",
+				"paginate" : {
+					"first" : "Primero",
+					"last" : "Ultimo",
+					"next" : "Siguiente",
+					"previous" : "Anterior"
+				},
+				"aria" : {
+					"sortAscending" : ": Activar para ordenar ascendente",
+					"sortDescending" : ": Activar para ordenar descendente"
+				}
+			}
+		});
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
+</body>
+</html>

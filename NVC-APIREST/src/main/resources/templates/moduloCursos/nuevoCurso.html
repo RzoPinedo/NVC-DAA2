@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+<meta charset="ISO-8859-1">
+<link href="../css/estilos.css" rel="stylesheet" type="text/css">
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<title>Nuevo Curso</title>
+</head>
+<body class="bg-secondary">
+	<section class="d-flex justify-content-center">
+	<div   class="card col-md-4 p-3">
+		<div  class="mb-3 " >
+		<h1 class="fw-bold  py-2">Agregar Curso</h1>
+		</div>
+		<div class="mb-2">
+		<form action="#" th:action="@{/cursos/guardar}" th:object="${cursos}" method="post">
+			<div class="form-group mb-4">
+				<label class="text-body form-label">Nombre:</label>
+				<input type="text" class=" col-xs-5 form-control" placeholder="Ej: ISO 9001"  th:field="*{NOMBRE}"/>
+			</div>
+			
+			<div class=" form-group">
+				<label class="text-body">Duracion:</label>
+				<input type="text" class="form-control" placeholder="Ej: 12" th:field="*{NRO_HORAS}" />
+			</div>
+			
+			<div class="col_one_third col_last c-azul">
+				<label class="text-body">Fecha Inicio:</label><br>
+				<input type="date" class="sm-form-control" th:field="*{FECHA_INICIO}" />
+			</div>
+			
+			<div class="col_one_third col_last c-azul">
+				<label class="text-body">Fecha Fin:</label><br>
+				<input type="date" class="sm-form-control" th:field="*{FECHA_FIN}" />
+			</div>
+			
+			<div class="form-group">
+				<label class="text-body">Precio:</label>
+				<input type="text" class="form-control" placeholder="Ej: 450.00" th:field="*{PRECIO_CURSO}" />
+			</div>
+			
+			<div class="form-group">
+				<label class="text-body">Estado:</label>
+				<input type="text" class="form-control" placeholder="Ej: 0=Inactivo - 1=Activo" th:field="*{ESTADO}" />
+			</div>
+			
+			<div class="form-group">
+				<label class="text-body" >Empleados:</label><br>
+				<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" th:field="*{ID_EMPLEADOS}" >
+						<option th:each="empleado:${empleados}"
+							th:value="${empleado.ID_EMPLEADOS}"
+							th:text="${empleado.NOMBRES}"
+						/>
+					</select>
+			</div>
+			
+			<div>
+				<button class="btn btn-primary btn-lg" type="submit">Guardar</button>
+			</div>
+			
+		</form>
+		</div>
+	</div>
+	</section>
+
+</body>
+</html>
