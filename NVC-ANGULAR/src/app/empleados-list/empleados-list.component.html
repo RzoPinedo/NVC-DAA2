@@ -1,0 +1,40 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Empleados List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID Empleados</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>DNI</th>
+          <th>Correo</th>
+          <th>Telefono</th>
+          <th>Direccion</th>
+          <th>Estado</th>
+          <th>ID Cargo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empleados of empleados | async">
+          <td>{{empleados.id_empleados}}</td>
+          <td>{{empleados.nombres}}</td>
+          <td>{{empleados.apellidos}}</td>
+          <td>{{empleados.dni}}</td>
+          <td>{{empleados.correo}}</td>
+          <td>{{empleados.telefono}}</td>
+          <td>{{empleados.direccion}}</td>
+          <td>{{empleados.estado}}</td>
+          <td>{{empleados.id_cargo}}</td>
+          <td><button (click)="empleadosDelete(empleados.id)" class="btn btn-danger">Delete</button>
+              <button (click)="empleadosUpdate(empleados.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              <button (click)="empleadosDetails(empleados.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

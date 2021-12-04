@@ -1,7 +1,7 @@
-import { CargoDetailsComponent } from './../cargo-details/cargo-details.component';
+import { CargoDetailsComponent } from '../cargo-details/cargo-details.component';
 import { Observable } from "rxjs";
-import { CargoService } from "./../cargo.service";
-import { Cargo } from "./../cargo";
+import { CargoService } from "../cargo.service";
+import { Cargo } from "../cargo";
 import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 
