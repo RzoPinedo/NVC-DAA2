@@ -1,0 +1,18 @@
+<h2>Cargo Details</h2> 
+
+<hr/>
+<div *ngIf="cargo">
+  <div>
+    <label><b>ID Cargo: </b></label> {{cargo.id_cargo}}
+  </div>
+  <div>
+    <label><b>Nombre: </b></label> {{cargo.nombre}}
+  </div>
+  <div>
+    <label><b>Estado: </b></label> {{cargo.estado}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Cargo List</button><br>
