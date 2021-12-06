@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CargoService {
 
-  private baseUrl = 'http://localhost:8085/NVConsulting/rest/cargo/cargos';
+  private baseUrl = 'http://localhost:8085/NVConsulting/rest/cargo';
 
   constructor(private http: HttpClient) { }
 

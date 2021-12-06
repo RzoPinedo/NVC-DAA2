@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CargoCreateComponent } from './cargo-create.component';
 
 describe('CargoCreateComponent', () => {
-  let component: CargoCreateComponentt;
+  let component: CargoCreateComponent;
   let fixture: ComponentFixture<CargoCreateComponent>;
 
   beforeEach(async(() => {

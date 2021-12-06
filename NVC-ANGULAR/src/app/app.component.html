@@ -1,5 +1,94 @@
-<!--The content below is only a placeholder and can be replaced.-->
 
 
-<router-outlet></router-outlet>
-<app-cargo-list></app-cargo-list>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0e2b3f;">
+  <!-- Links -->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+        <img class="d-inline-block" [src]="logo" alt="Logo NVConsulting" width="250" height="75">
+    </a>
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menú
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <div class="navbar-nav">
+            <li class="nav-item">
+              <a routerLink="cargo" class="nav-link text-light" routerLinkActive="active">Cargos List</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="add" class="nav-link text-light" routerLinkActive="active">Add Cargos</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="empleados" class="nav-link text-light" routerLinkActive="active">Empleados List</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="add" class="nav-link text-light" routerLinkActive="active">Add Cargos</a>
+            </li>
+        </div>
+    </div>
+  </div>
+  <div id="ctn-bars-search">
+      <input type="text" id="inputSearch" class="form-control" placeholder="¿Qué deseas buscar?">
+  </div>
+  
+</nav>
+
+
+<div class="container">
+  <br>
+  <h2 class="text-light" style="text-align: center;">{{title}}</h2>
+  <hr>  
+  <div class="card">
+    <div class="card-body">
+  <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<footer class="footer bg-dark text-white">
+  <div class="container">
+    <nav class="row">
+      <ul class="col-4 list-unstyled text-center">
+          <li class="font-weight-bold text-uppercase"></li>
+          <li><a href="#" class="text-reset">Trabaja con nosotros</a></li>
+          <li><a href="#" class="text-reset">Contactanos</a></li>
+          <li><a href="#" class="text-reset">Ayuda y asistencia</a></li>
+      </ul>
+      <!--Menu 3-->
+      <ul class="col-4 list-unstyled text-center">
+          <li class="font-weight-bold text-uppercase"></li>
+          <li><a href="#" class="text-reset">Condiciones</a></li>
+          <li><a href="#" class="text-reset">Politica de privacidad</a></li>
+          <li><a href="#" class="text-reset">Mapa del sitio</a></li>
+      </ul>
+      <!--redes-->
+      <ul class="col-4 list-unstyled text-center d-inline-block">
+          <p>Siguenos en: </p>
+          <li class="social">
+              <a href="https://www.facebook.com/nvconsulting" class="text-reset">
+                  <img [src]="fb" class="redes">
+              </a>
+          </li>
+          <li class="social">
+              <a href="#" class="text-reset">
+                  <img [src]="ig" class="redes">
+              </a>
+          </li>
+          <li class="social">
+              <a href="#" class="text-reset">
+                  <img [src]="tw" class="redes">
+              </a>
+          </li>
+          <li class="social">
+              <a href="#" class="text-reset">
+                  <img [src]="yt" class="redes">
+              </a>
+          </li>
+        </ul>
+  </nav>
+  </div>
+  <div class=" row container-fluid  text-center p-3">
+    <p class="small">&copy; Todos los derechos reservados :: Novus Vicis Consulting Group SAC :: Perú 2021</p>
+  </div>
+</footer>
