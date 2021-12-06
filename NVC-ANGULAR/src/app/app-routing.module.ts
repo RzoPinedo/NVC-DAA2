@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'details/:id', component: CargoDetailsComponent },
   { path: '', redirectTo: 'empleados', pathMatch: 'full' },
   { path: 'empleados', component: EmpleadosListComponent },
-  { path: 'add', component: EmpleadosCreateComponent },
+  { path: 'addemp', component: EmpleadosCreateComponent },
   { path: 'update/:id', component: EmpleadosUpdateComponent },
   { path: 'details/:id', component: EmpleadosDetailsComponent }
 ];
