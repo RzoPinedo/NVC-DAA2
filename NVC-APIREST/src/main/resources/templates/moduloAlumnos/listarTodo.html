@@ -111,9 +111,9 @@
 							<td th:text="${alumno.DIRECCION}">Direccion</td>
 							<td th:text="${alumno.ESTADO}">Estado</td>
 							<td sec:authorize="hasRole('ADMIN')">
-								<a th:href="@{/alumnos/actualizar/{id}(id=${curso.ID_ALUMNO})}">Actualizar</a>
+								<a th:href="@{/alumnos/actualizar/{id}(id=${alumno.ID_ALUMNO})}">Actualizar</a>
 								&nbsp;&nbsp;&nbsp; 
-								<a th:href="@{/alumnos/eliminar/{id}(id=${curso.ID_ALUMNO})}">Eliminar</a>
+								<a th:href="@{/alumnos/eliminar/{id}(id=${alumno.ID_ALUMNO})}">Eliminar</a>
 							</td>
 						</tr>
 					</tbody>

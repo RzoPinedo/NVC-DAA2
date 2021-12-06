@@ -17,9 +17,9 @@
             <td>{{cargo.id_cargo}}</td>
             <td>{{cargo.nombre}}</td>
             <td>{{cargo.estado}}</td>
-            <td><button (click)="cargoDelete(cargo.id)" class="btn btn-danger">Delete</button>
-                <button (click)="cargoUpdate(cargo.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
-                <button (click)="cargoDetails(cargo.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            <td><button (click)="cargoDelete(cargo.id_cargo)" class="btn btn-danger">Delete</button>
+                <button (click)="cargoUpdate(cargo.id_cargo)" class="btn btn-info" style="margin-left: 10px">Update</button>
+                <button (click)="cargo-details(cargo.id_cargo)" class="btn btn-info" style="margin-left: 10px">Details</button>
             </td>
           </tr>
         </tbody>

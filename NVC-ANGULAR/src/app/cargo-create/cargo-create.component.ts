@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CargoCreateComponent implements OnInit {
 
-  employee: Cargo = new Cargo();
+  cargo: Cargo = new Cargo();
   submitted = false;
 
   constructor(private cargoService: CargoService,

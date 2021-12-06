@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CargoService {
 
-  private baseUrl = 'localhost:8085/NVConsulting/rest/cargo';
+  private baseUrl = 'http://localhost:8085/NVConsulting/rest/cargo/cargos';
 
   constructor(private http: HttpClient) { }
 
@@ -15,7 +15,7 @@ export class CargoService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  cargoCreate(employee: Object): Observable<Object> {
+  cargoCreate(cargo: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, cargo);
   }
 
