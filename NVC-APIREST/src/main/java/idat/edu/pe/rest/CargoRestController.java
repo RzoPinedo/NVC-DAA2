@@ -28,7 +28,7 @@ public class CargoRestController {
 	@Autowired
 	private CargoServicio servicio;
 
-	@GetMapping("/cargos")
+	@GetMapping("/cargo")
 	public ResponseEntity<Object> buscartTodo() {
 
 		List<Cargo> listaCargo = servicio.buscarTodo();

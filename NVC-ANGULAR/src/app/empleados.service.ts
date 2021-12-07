@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EmpleadosService {
 
-  private baseUrl = 'http://localhost:8085/NVConsulting/rest/empleados';
+  private baseUrl = 'http://localhost:8085/NVConsulting/rest/empleados/empleados';
 
   constructor(private http: HttpClient) { }
 
