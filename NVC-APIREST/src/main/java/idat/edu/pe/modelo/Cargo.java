@@ -95,6 +95,14 @@ public class Cargo implements Serializable {
 	@Override
 	public String toString() {
 		return "Cargo [ID_CARGO=" + ID_CARGO + "]";
-	}	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

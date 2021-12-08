@@ -178,6 +178,15 @@ public class Empleados implements Serializable {
 	@Override
 	public String toString() {
 		return "Empleados [ID_EMPLEADOS=" + ID_EMPLEADOS + "]";
-	}	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

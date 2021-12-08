@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="utf-8" />
+<title>Insert title here</title>
+<link href="../../css/estilos.css" rel="stylesheet" type="text/css">
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../css/bootstrap-grid.min.css" rel="stylesheet">
+</head>
+<body class="bg-secondary">
+	<section class="d-flex justify-content-center">
+	<div   class="card col-md-4 p-3">
+		<div  class="mb-3 " >
+		<h1 class="fw-bold  py-2">Editar Curso</h1>
+		</div>
+		<div class="mb-2">
+			<form th:action="@{/cursos/guardar}"
+				th:object="${cursos}" method="post">
+
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<label >ID Curso</label>
+						<input type="text" class="form-control" id="id" th:field="*{ID_CURSOS}" readonly="readonly" />
+					  </div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label >Nombre</label>
+						<input type="text" class="form-control" id="nombre" placeholder="Nombre Curso" th:field="*{NOMBRE}" />
+					  </div>
+					  <div class="form-group col-md-6">
+						<label >Duración</label>
+						<input type="text" class="form-control" id="duracion" placeholder="Duración" th:field="*{NRO_HORAS}" />
+					  </div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label >Fecha Inicio</label>
+						<input type="date" class="form-control" id="inicio" th:field="*{FECHA_INICIO}"/>
+					  </div>
+					  <div class="form-group col-md-6">
+						<label >Fecha Fin</label>
+						<input type="date" class="form-control" id="fin" th:field="*{FECHA_FIN}"/>
+					  </div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label >Precio</label>
+						<input type="text" class="form-control" id="precio" placeholder="Ingrese Precio" th:field="*{PRECIO_CURSO}" />
+					  </div>
+					  <div class="form-group col-md-6">
+						<label >Estado</label>
+						<input type="text" class="form-control" id="estado" placeholder="Ingrese estado" th:field="*{ESTADO}" />
+					  </div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label >Empleado</label>
+						<input type="text" class="form-control" id="empleado" placeholder="Ingrese Empleado" th:field="*{ID_EMPLEADOS}" />
+					  </div>
+				</div>
+
+				<div align="center">
+					<button type="submit" class="btn btn-primary">Guardar</button>
+				</div>
+
+
+			</form>
+</div>
+	</div>
+	</section>
+
+</body>
+</html>
