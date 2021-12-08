@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ["./cargo-list.component.css"]
 })
 export class CargoListComponent implements OnInit {
-  cargo: Observable<Cargo[]>;
+  cargos: Observable<Cargo[]>;
 
   constructor(private cargoService: CargoService,
     private router: Router) {}
@@ -21,7 +21,7 @@ export class CargoListComponent implements OnInit {
   }
 
   reloadData() {
-    this.cargo = this.cargoService.getCargoList();
+    this.cargos = this.cargoService.getCargoList();
   }
 
   cargoDelete(id: number) {
