@@ -1,94 +1,107 @@
-
-
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0e2b3f;">
-  <!-- Links -->
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
-        <img class="d-inline-block" [src]="logo" alt="Logo NVConsulting" width="250" height="75">
-    </a>
-    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
-        aria-label="Toggle navigation">
-        Menú
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <div class="navbar-nav">
-            <li class="nav-item">
-              <a routerLink="cargo" class="nav-link text-light" routerLinkActive="active">Cargos List</a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="add" class="nav-link text-light" routerLinkActive="active">Add Cargos</a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="empleados" class="nav-link text-light" routerLinkActive="active">Empleados List</a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="addemp" class="nav-link text-light" routerLinkActive="active">Add Cargos</a>
-            </li>
+<header class="site-header sticky-top py-1 " style="padding-left: 30px; padding-right: 30px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded menu" aria-label="Twelfth navbar example">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10"
+                aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img class="d-inline-block" [src]="logo" alt="Logo NVConsulting" width="250" height="75">
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menú
+            </button>
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Ayuda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-bs-toggle="dropdown"
+                            aria-expanded="false">Administración</a>
+                        <ul class="dropdown-menu subMenu" aria-labelledby="dropdown10">
+                            <li><a class="dropdown-item" routerLink="cargo">Cargos</a></li>
+                            <li><a class="dropdown-item" routerLink="add">Agregar cargo</a></li>
+                            <li><a class="dropdown-item" routerLink="empleados">Empleados</a></li>
+                            <li><a class="dropdown-item" routerLink="addemp">Agregar empleado</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="ctn-bars-search">
+            <input type="text" id="inputSearch" class="form-control" placeholder="¿Qué deseas buscar?">
+        </div>
+    </nav>
+</header>
+<main class="container">
+    <br>
+    <h2 class="text-light" style="text-align: center;">{{title}}</h2>
+    <hr>
+    <div class="card">
+        <div class="card-body">
+            <router-outlet></router-outlet>
         </div>
     </div>
-  </div>
-  <div id="ctn-bars-search">
-      <input type="text" id="inputSearch" class="form-control" placeholder="¿Qué deseas buscar?">
-  </div>
-  
-</nav>
+</main>
 
-
-<div class="container">
-  <br>
-  <h2 class="text-light" style="text-align: center;">{{title}}</h2>
-  <hr>  
-  <div class="card">
-    <div class="card-body">
-  <router-outlet></router-outlet>
+<footer class="bg-dark text-white footer">
+    <div class="container">
+        <nav class="row">
+            <ul class="col-4 list-unstyled text-center">
+                <li class="font-weight-bold text-uppercase"></li>
+                <li><a href="#" class="text-reset">Trabaja con nosotros</a></li>
+                <li><a href="#" class="text-reset">Contactanos</a></li>
+                <li><a href="#" class="text-reset">Ayuda y asistencia</a></li>
+            </ul>
+            <!--Menu 3-->
+            <ul class="col-4 list-unstyled text-center">
+                <li class="font-weight-bold text-uppercase"></li>
+                <li><a href="#" class="text-reset">Condiciones</a></li>
+                <li><a href="#" class="text-reset">Politica de privacidad</a></li>
+                <li><a href="#" class="text-reset">Mapa del sitio</a></li>
+            </ul>
+            <!--redes-->
+            <ul class="col-4 list-unstyled text-center">
+                <p>Siguenos en: </p>
+                <li class="social">
+                    <a href="https://www.facebook.com/nvconsulting" target="_blank" class="text-reset">
+                        <img [src]="fb" class="redes">
+                    </a>
+                </li>
+                <li class="social">
+                    <a href="#" class="text-reset">
+                        <img [src]="ig" class="redes">
+                    </a>
+                </li>
+                <li class="social">
+                    <a href="#" class="text-reset">
+                        <img [src]="tw" class="redes">
+                    </a>
+                </li>
+                <li class="social">
+                    <a href="#" class="text-reset">
+                        <img [src]="yt" class="redes">
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
-  </div>
-</div>
-
-<footer class="footer bg-dark text-white">
-  <div class="container">
-    <nav class="row">
-      <ul class="col-4 list-unstyled text-center">
-          <li class="font-weight-bold text-uppercase"></li>
-          <li><a href="#" class="text-reset">Trabaja con nosotros</a></li>
-          <li><a href="#" class="text-reset">Contactanos</a></li>
-          <li><a href="#" class="text-reset">Ayuda y asistencia</a></li>
-      </ul>
-      <!--Menu 3-->
-      <ul class="col-4 list-unstyled text-center">
-          <li class="font-weight-bold text-uppercase"></li>
-          <li><a href="#" class="text-reset">Condiciones</a></li>
-          <li><a href="#" class="text-reset">Politica de privacidad</a></li>
-          <li><a href="#" class="text-reset">Mapa del sitio</a></li>
-      </ul>
-      <!--redes-->
-      <ul class="col-4 list-unstyled text-center d-inline-block">
-          <p>Siguenos en: </p>
-          <li class="social">
-              <a href="https://www.facebook.com/nvconsulting" class="text-reset">
-                  <img [src]="fb" class="redes">
-              </a>
-          </li>
-          <li class="social">
-              <a href="#" class="text-reset">
-                  <img [src]="ig" class="redes">
-              </a>
-          </li>
-          <li class="social">
-              <a href="#" class="text-reset">
-                  <img [src]="tw" class="redes">
-              </a>
-          </li>
-          <li class="social">
-              <a href="#" class="text-reset">
-                  <img [src]="yt" class="redes">
-              </a>
-          </li>
-        </ul>
-  </nav>
-  </div>
-  <div class=" row container-fluid  text-center p-3">
-    <p class="small">&copy; Todos los derechos reservados :: Novus Vicis Consulting Group SAC :: Perú 2021</p>
-  </div>
+    <div class=" row container-fluid  text-center p-3">
+        <p class="small">&copy; Todos los derechos reservados :: Novus Vicis Consulting Group SAC :: Perú 2021</p>
+    </div>
 </footer>

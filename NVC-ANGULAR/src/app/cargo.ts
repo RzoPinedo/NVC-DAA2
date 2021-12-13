@@ -1,5 +1,5 @@
 export class Cargo {
-    id_cargo: number;
-    nombre: string;
-    estado: boolean;    
-}  
+  id_CARGO: number;
+  nombre: string;
+  estado: boolean;
+}
