@@ -1,0 +1,25 @@
+<div class="card">
+
+    <div class="card-header">
+        <h1 class="fst-italic text-dark">Carrito de compras</h1>
+    </div>
+
+    <ng-container *ngIf="carritoService.nroPaso === 1">
+        <app-paso1-carrito></app-paso1-carrito>
+    </ng-container>
+
+    <ng-container *ngIf="carritoService.nroPaso === 2">
+        <app-paso2-carrito></app-paso2-carrito>
+    </ng-container>
+
+    <ng-container *ngIf="carritoService.nroPaso === 3">
+        <app-paso3-carrito></app-paso3-carrito>
+    </ng-container>
+
+    <ng-container *ngIf="carritoService.nroPaso === 4">
+        <app-paso4-carrito></app-paso4-carrito>
+    </ng-container>
+
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

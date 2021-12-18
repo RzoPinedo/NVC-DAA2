@@ -1,0 +1,73 @@
+<div class="card-body text-dark">
+    <div class="row justify-content-center">
+
+        <div class="col-8">
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <label>Monto</label>
+                    <input type="text" class="form-control" disabled>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>Tarjeta de Crédito o Débito</label>
+                    <input type="text" class="form-control" placeholder="Tarjeta de Crédito o Débito">
+                </div>
+                <div class="col-md-3">
+                    <label>Fecha de Expiración</label>
+                    <select class="form-control">
+                        <option value="">Mes</option>
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="">Febrero</option>
+                        <option value="">Febrero</option>
+                        <option value="">Febrero</option>
+                        <option value="">Febrero</option>
+                        <option value="">Febrero</option>
+                        <option value="">Febrero</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label>.</label>
+                    <select class="form-control">
+                        <option *ngFor="let item of anios">{{item}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <label>Código de Seguridad</label>
+                    <input type="text" class="form-control" placeholder="Código de Seguridad">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>Nombre del titular de la tarjeta</label>
+                    <input type="text" class="form-control" placeholder="Nombre del titular de la tarjeta">
+                </div>
+                <div class="col-md-6">
+                    <label>Apellido del titular de la tarjeta</label>
+                    <input type="text" class="form-control" placeholder="Apellido del titular de la tarjeta">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>Correo Electronico</label>
+                    <input type="text" class="form-control" placeholder="Correo Electronico">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-footer">
+    <div class="row">
+        <div class="col text-left">
+            <button type="button" class="btn btn-warning" style="width: 220px !important;"
+                (click)="regresarPaso2()">Regresar</button>
+        </div>
+        <div class="col " style="text-align: right;">
+            <button type="button" class="btn btn-success" style="width: 220px !important;"
+                (click)="continuarPaso4()">Finalizar</button>
+        </div>
+    </div>
+</div>

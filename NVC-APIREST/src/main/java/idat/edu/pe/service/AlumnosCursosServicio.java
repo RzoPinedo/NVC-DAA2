@@ -35,4 +35,8 @@ public class AlumnosCursosServicio implements BusquedaService{
 		return(List<AlumnosCursos>) repositorio.findByIDALUMNO(IDALUMNO);
 	}	
 
+	
+	public AlumnosCursos crear(AlumnosCursos alumnos) {
+		return repositorio.save(alumnos);
+	}
 }

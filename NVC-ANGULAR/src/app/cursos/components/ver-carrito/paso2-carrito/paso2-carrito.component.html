@@ -1,0 +1,53 @@
+<div class="card-body text-dark">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <h3>Datos personales</h3>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>Nombres</label>
+                    <input type="text" class="form-control" [(ngModel)]="alumno.nombres">
+                </div>
+                <div class="col-md-6">
+                    <label>Apellidos</label>
+                    <input type="text" class="form-control" [(ngModel)]="alumno.apellidos">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>DNI</label>
+                    <input type="text" class="form-control" [(ngModel)]="alumno.dni">
+                </div>
+                <div class="col-md-6">
+                    <label>Correo</label>
+                    <input type="text" class="form-control" [(ngModel)]="alumno.correo">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>Teléfono</label>
+                    <input type="text" class="form-control" [(ngModel)]="alumno.telefono">
+                </div>
+                <div class="col-md-6">
+                    <label>Dirección</label>
+                    <input type="text" class="form-control" [(ngModel)]="alumno.direccion">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-footer">
+    <div class="row">
+        <div class="col text-left">
+            <button type="button" class="btn btn-warning" style="width: 220px !important;"
+                (click)="regresarPaso1()">Regresar</button>
+        </div>
+        <div class="col " style="text-align: right;">
+            <button type="button" class="btn btn-success" style="width: 220px !important;"
+                (click)="continuarPaso3()">Continuar</button>
+        </div>
+    </div>
+</div>

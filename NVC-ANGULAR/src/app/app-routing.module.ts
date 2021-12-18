@@ -8,7 +8,8 @@ import { EmpleadosDetailsComponent } from "./empleados-details/empleados-details
 import { EmpleadosCreateComponent } from "./empleados-create/empleados-create.component";
 import { EmpleadosListComponent } from "./empleados-list/empleados-list.component";
 import { EmpleadosUpdateComponent } from "./empleados-update/empleados-update.component";
-import { CursoListComponent } from "./cursos/curso-list/curso-list.component";
+import { CursoListComponent } from "./cursos/components/curso-list/curso-list.component";
+import { VerCarritoComponent } from "./cursos/components/ver-carrito/ver-carrito.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "cargo", pathMatch: "full" },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: "update/:id", component: EmpleadosUpdateComponent },
   { path: "details/:id", component: EmpleadosDetailsComponent },
   { path: "cursos", component: CursoListComponent },
+  { path: "vercarrito", component: VerCarritoComponent },
 ];
 
 @NgModule({
