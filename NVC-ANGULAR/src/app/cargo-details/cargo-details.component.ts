@@ -30,6 +30,6 @@ export class CargoDetailsComponent implements OnInit {
   }
 
   list(){
-    this.router.navigate(['cargos']);
+    this.router.navigate(['cargo']);
   }
 }

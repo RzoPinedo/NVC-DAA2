@@ -5,18 +5,18 @@
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
-        <tr>
+        <tr class="text-light">
           <th>ID</th>
           <th>Nombre</th>
           <th>Estado</th>
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-light">
         <tr *ngFor="let cargo of cargos | async">
-          <td>{{cargo.id_CARGO}}</td>
-          <td>{{cargo.nombre}}</td>
-          <td>{{cargo.estado}}</td>
+          <td class="text-light">{{cargo.id_CARGO}}</td>
+          <td class="text-light">{{cargo.nombre}}</td>
+          <td class="text-light">{{cargo.estado}}</td>
           <td><button (click)="cargoDelete(cargo.id_CARGO)" class="btn btn-danger">Delete</button>
             <button (click)="cargoUpdate(cargo.id_CARGO)" class="btn btn-info" style="margin-left: 10px">Update</button>
             <button (click)="cargoDetails(cargo.id_CARGO)" class="btn btn-info"

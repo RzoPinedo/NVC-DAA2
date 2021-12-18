@@ -10,6 +10,7 @@ import { EmpleadosListComponent } from "./empleados-list/empleados-list.componen
 import { EmpleadosUpdateComponent } from "./empleados-update/empleados-update.component";
 import { CursoListComponent } from "./cursos/components/curso-list/curso-list.component";
 import { VerCarritoComponent } from "./cursos/components/ver-carrito/ver-carrito.component";
+import { AppComponent } from "./app.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "cargo", pathMatch: "full" },
@@ -20,8 +21,8 @@ const routes: Routes = [
   { path: "", redirectTo: "empleados", pathMatch: "full" },
   { path: "empleados", component: EmpleadosListComponent },
   { path: "addemp", component: EmpleadosCreateComponent },
-  { path: "update/:id", component: EmpleadosUpdateComponent },
-  { path: "details/:id", component: EmpleadosDetailsComponent },
+  { path: "updateEmp/:id", component: EmpleadosUpdateComponent },
+  { path: "detailsEmp/:id", component: EmpleadosDetailsComponent },
   { path: "cursos", component: CursoListComponent },
   { path: "vercarrito", component: VerCarritoComponent },
 ];

@@ -24,7 +24,7 @@ export class EmpleadosListComponent implements OnInit {
     this.empleados = this.empleadosService.getEmpleadosList();
   }
 
-  deleteEmpleados(id: number) {
+  empleadosDelete(id: number) {
     this.empleadosService.empleadosDelete(id)
       .subscribe(
         data => {
@@ -35,10 +35,10 @@ export class EmpleadosListComponent implements OnInit {
   }
 
   empleadosDetails(id: number){
-    this.router.navigate(['details', id]);
+    this.router.navigate(['detailsEmp', id]);
   }
 
   empleadosUpdate(id: number){
-    this.router.navigate(['update', id]);
+    this.router.navigate(['updateEmp', id]);
   }
 }

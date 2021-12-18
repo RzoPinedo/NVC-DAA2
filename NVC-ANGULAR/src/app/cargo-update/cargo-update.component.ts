@@ -40,6 +40,6 @@ export class CargoUpdateComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/cargos']);
+    this.router.navigate(['/cargo']);
   }
 }

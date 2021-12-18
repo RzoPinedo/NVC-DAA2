@@ -1,11 +1,11 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h2>Empleados List</h2>
+    <h2>Lista de Empleados</h2>
   </div>
   <div class="panel-body">
     <table class="table table-striped">
-      <thead>
-        <tr>
+      <thead class="bg-dark">
+        <tr class="text-light">
           <th>ID</th>
           <th>Nombres</th>
           <th>Apellidos</th>
@@ -19,15 +19,15 @@
       </thead>
       <tbody>
         <tr *ngFor="let empleados of empleados | async">
-          <td>{{empleados.id_EMPLEADOS}}</td>
-          <td>{{empleados.nombres}}</td>
-          <td>{{empleados.apellidos}}</td>
-          <td>{{empleados.dni}}</td>
-          <td>{{empleados.correo}}</td>
-          <td>{{empleados.telefono}}</td>
-          <td>{{empleados.direccion}}</td>
-          <td>{{empleados.estado}}</td>
-          <td>{{empleados.id_CARGO.nombre}}</td>
+          <td class="text-light">{{empleados.id_EMPLEADOS}}</td>
+          <td class="text-light">{{empleados.nombres}}</td>
+          <td class="text-light">{{empleados.apellidos}}</td>
+          <td class="text-light">{{empleados.dni}}</td>
+          <td class="text-light">{{empleados.correo}}</td>
+          <td class="text-light">{{empleados.telefono}}</td>
+          <td class="text-light">{{empleados.direccion}}</td>
+          <td class="text-light">{{empleados.estado}}</td>
+          <td class="text-light">{{empleados.id_CARGO.nombre}}</td>
           <td><button (click)="empleadosDelete(empleados.id_EMPLEADOS)" class="btn btn-danger">Delete</button>
               <button (click)="empleadosUpdate(empleados.id_EMPLEADOS)" class="btn btn-info" style="margin-left: 10px">Update</button>
               <button (click)="empleadosDetails(empleados.id_EMPLEADOS)" class="btn btn-info" style="margin-left: 10px">Details</button>
