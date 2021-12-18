@@ -23,3 +23,15 @@
 .social {
   display: inline-block;
 }
+.contenido {
+  background-color: #0e2b3f !important;
+  color: white !important;
+}
+.footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  background-color: blue;
+  text-align: center;
+  color: white;
+}
