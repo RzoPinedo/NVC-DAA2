@@ -13,9 +13,15 @@ import { VerCarritoComponent } from "./cursos/components/ver-carrito/ver-carrito
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
+import { PrincipalComponent } from "./principal/principal.component";
+import { NosotrosComponent } from "./nosotros/nosotros.component";
+import { ContactoComponent } from "./contacto/contacto.component";
+import { AyudaComponent } from "./ayuda/ayuda.component";
+
 
 const routes: Routes = [
-  { path: "", redirectTo: "cargo", pathMatch: "full" },
+  { path: "", redirectTo: "principal", pathMatch: "full" },
+  { path: "principal", component: PrincipalComponent },
   { path: "cargo", component: CargoListComponent },
   { path: "add", component: CargoCreateComponent },
   { path: "update/:id", component: CargoUpdateComponent },
@@ -30,6 +36,9 @@ const routes: Routes = [
   { path: "", component: AppComponent, pathMatch: "full" },
   { path: "login", component: LoginComponent, pathMatch: "full" },
   { path: "register", component: RegisterComponent, pathMatch: "full"},
+  { path: "nosotros", component: NosotrosComponent },
+  { path: "contacto", component: ContactoComponent },
+  { path: "ayuda", component: AyudaComponent },  
 ];
 
 @NgModule({

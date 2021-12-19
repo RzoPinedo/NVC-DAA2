@@ -25,6 +25,10 @@ import { Paso3CarritoComponent } from './cursos/components/ver-carrito/paso3-car
 import { Paso4CarritoComponent } from './cursos/components/ver-carrito/paso4-carrito/paso4-carrito.component';
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
+import { PrincipalComponent } from './principal/principal.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { AyudaComponent } from './ayuda/ayuda.component';
 
 
 @NgModule({
@@ -48,6 +52,10 @@ import { RegisterComponent } from "./register/register.component";
     Paso4CarritoComponent,
     LoginComponent,
     RegisterComponent,
+    PrincipalComponent,
+    NosotrosComponent,
+    ContactoComponent,
+    AyudaComponent,
   ],
   imports: [
     BrowserModule,
