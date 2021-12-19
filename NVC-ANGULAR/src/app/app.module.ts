@@ -1,3 +1,4 @@
+/*import { routing } from "./app.routing";*/
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
@@ -22,6 +23,9 @@ import { Paso1CarritoComponent } from './cursos/components/ver-carrito/paso1-car
 import { Paso2CarritoComponent } from './cursos/components/ver-carrito/paso2-carrito/paso2-carrito.component';
 import { Paso3CarritoComponent } from './cursos/components/ver-carrito/paso3-carrito/paso3-carrito.component';
 import { Paso4CarritoComponent } from './cursos/components/ver-carrito/paso4-carrito/paso4-carrito.component';
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
+
 
 @NgModule({
   declarations: [
@@ -42,6 +46,8 @@ import { Paso4CarritoComponent } from './cursos/components/ver-carrito/paso4-car
     Paso2CarritoComponent,
     Paso3CarritoComponent,
     Paso4CarritoComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +56,7 @@ import { Paso4CarritoComponent } from './cursos/components/ver-carrito/paso4-car
     BrowserAnimationsModule,
     HttpClientModule,
     MatDialogModule,
+    /*routing,*/
   ],
   entryComponents: [PasarelaPagoComponent],
   providers: [],
