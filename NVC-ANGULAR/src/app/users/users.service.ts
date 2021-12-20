@@ -11,4 +11,8 @@ export class UsersService {
   login(user: any): Observable<any> {
     return this.http.post('http://localhost:8085/NVConsulting/rest/usuarios/usuarios', user);
   }
+
+  register(user: any): Observable<any> {
+    return this.http.post('http://localhost:8085/NVConsulting/rest/usuarios/usuarios', user);
+  }
 }

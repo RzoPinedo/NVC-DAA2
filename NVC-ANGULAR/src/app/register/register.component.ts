@@ -7,13 +7,15 @@ import { Component } from "@angular/core";
 })
 export class RegisterComponent {
   email: string;
+  username: string;
   password: string;
   confirmPassword: string;
+  passwordError: boolean;
 
   constructor() {}
 
   register() {
-    console.log(this.email);
+    console.log(this.username);
     console.log(this.password);
   }
 }
