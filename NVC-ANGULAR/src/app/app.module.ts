@@ -29,8 +29,13 @@ import { PrincipalComponent } from './principal/principal.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
+import { RouterModule } from "@angular/router";
 
-
+/*const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'principal'},
+  {path: 'principal', component: PrincipalComponent},
+  {path: 'login', component: LoginComponent}
+]*/
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +63,7 @@ import { AyudaComponent } from './ayuda/ayuda.component';
     AyudaComponent,
   ],
   imports: [
+    /*RouterModule.forRoot(routes),*/
     BrowserModule,
     AppRoutingModule,
     FormsModule,
