@@ -1,4 +1,4 @@
-<div class="panel panel-primary">
+<div id="content" class="panel panel-primary" #content>
   <div class="panel-heading">
     <h2>Lista de Empleados</h2>
   </div>
@@ -15,9 +15,10 @@
           <th>Direccion</th>
           <th>Estado</th>
           <th>Cargo</th>
+          <th>Acciones</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="bg-dark">
         <tr *ngFor="let empleados of empleados | async">
           <td class="text-light">{{empleados.id_EMPLEADOS}}</td>
           <td class="text-light">{{empleados.nombres}}</td>
@@ -37,4 +38,7 @@
     </table>
   </div>
 </div>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div>
+  <button type="button" style="margin: 10px" class="btn btn-primary" (click)="imprimirLista()">Imprimir</button>
+</div>

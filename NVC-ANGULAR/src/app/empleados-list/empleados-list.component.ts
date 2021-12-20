@@ -2,8 +2,9 @@ import { EmpleadosDetailsComponent } from '../empleados-details/empleados-detail
 import { Observable } from "rxjs";
 import { EmpleadosService } from "../empleados.service";
 import { Empleados } from "../empleados";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { Router } from '@angular/router';
+import {jsPDF} from 'jspdf';
 
 @Component({
   selector: "app-empleados-list",
@@ -12,6 +13,17 @@ import { Router } from '@angular/router';
 })
 export class EmpleadosListComponent implements OnInit {
   empleados: Observable<Empleados[]>;
+
+  @ViewChild('content',{static:false}) el!: ElementRef
+  imprimirLista(){
+    let doc= new jsPDF('p','pt','a3');
+
+    doc.html( this.el.nativeElement,{
+      callback: (doc) =>{
+        doc.save('Lista de Empleados');
+      }
+    });
+  }
 
   constructor(private empleadosService: EmpleadosService,
     private router: Router) {}
