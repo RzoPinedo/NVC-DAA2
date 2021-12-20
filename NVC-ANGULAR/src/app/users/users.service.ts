@@ -9,6 +9,6 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   login(user: any): Observable<any> {
-    return this.http.post('http://localhost:8085/NVConsulting/rest/empleados/empleados', user);
+    return this.http.post('http://localhost:8085/NVConsulting/rest/usuarios/usuarios', user);
   }
 }
