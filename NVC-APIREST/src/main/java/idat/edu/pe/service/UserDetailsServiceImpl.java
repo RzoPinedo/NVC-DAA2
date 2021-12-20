@@ -1,4 +1,4 @@
-package idat.edu.pe.service;
+/*package idat.edu.pe.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import idat.edu.pe.modelo.Role;
-import idat.edu.pe.repositorio.UserRepository;
+import idat.edu.pe.repositorio.UsuariosRepositorio;
 
 
 
@@ -23,12 +23,12 @@ import idat.edu.pe.repositorio.UserRepository;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-    UserRepository userRepository;
+    UsuariosRepositorio userRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		idat.edu.pe.modelo.User appUser = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("Login Username Invalido."));
+		idat.edu.pe.modelo.Usuarios appUser = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("Login Username Invalido."));
 		
 		Set<GrantedAuthority> grantList = new HashSet<GrantedAuthority>(); 
 		for (Role role: appUser.getRoles()) {
@@ -40,4 +40,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return user;
 	}
 
-}
+}*/

@@ -1,4 +1,4 @@
-package idat.edu.pe.service;
+/*package idat.edu.pe.service;
 
 import java.util.Optional;
 
@@ -15,33 +15,33 @@ import org.springframework.stereotype.Service;
 import idat.edu.pe.dto.ChangePasswordForm;
 import idat.edu.pe.exception.CustomeFieldValidationException;
 import idat.edu.pe.exception.UsernameOrIdNotFound;
-import idat.edu.pe.modelo.User;
-import idat.edu.pe.repositorio.UserRepository;
+import idat.edu.pe.modelo.Usuarios;
+import idat.edu.pe.repositorio.UsuariosRepositorio;
 
 
 @Service
 public class UserServiceImpl implements UserService{
 
 	@Autowired
-	UserRepository repository;
+	UsuariosRepositorio repository;
 	
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Override
-	public Iterable<User> getAllUsers() {
+	public Iterable<Usuarios> getAllUsers() {
 		return repository.findAll();
 	}
 	
-	private boolean checkUsernameAvailable(User user) throws Exception {
-		Optional<User> userFound = repository.findByUsername(user.getUsername());
+	private boolean checkUsernameAvailable(Usuarios user) throws Exception {
+		Optional<Usuarios> userFound = repository.findByUsername(user.getUsername());
 		if (userFound.isPresent()) {
 			throw new CustomeFieldValidationException("Username no disponible","username");
 		}
 		return true;
 	}
 
-	private boolean checkPasswordValid(User user) throws Exception {
+	private boolean checkPasswordValid(Usuarios user) throws Exception {
 		if (user.getConfirmPassword() == null || user.getConfirmPassword().isEmpty()) {
 			throw new CustomeFieldValidationException("Confirm Password es obligatorio","confirmPassword");
 		}
@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService{
 
 
 	@Override
-	public User createUser(User user) throws Exception {
+	public Usuarios createUser(Usuarios user) throws Exception {
 		if (checkUsernameAvailable(user) && checkPasswordValid(user)) {
 			String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
 			user.setPassword(encodedPassword);
@@ -64,13 +64,13 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public User getUserById(Integer id) throws UsernameOrIdNotFound {
+	public Usuarios getUserById(Integer id) throws UsernameOrIdNotFound {
 		return repository.findById(id).orElseThrow(() -> new UsernameOrIdNotFound("El Id del usuario no existe."));
 	}
 
 	@Override
-	public User updateUser(User fromUser) throws Exception {
-		User toUser = getUserById(fromUser.getId());
+	public Usuarios updateUser(Usuarios fromUser) throws Exception {
+		Usuarios toUser = getUserById(fromUser.getId());
 		mapUser(fromUser, toUser);
 		return repository.save(toUser);
 	}
@@ -80,7 +80,8 @@ public class UserServiceImpl implements UserService{
 	 * @param from
 	 * @param to
 	 */
-	protected void mapUser(User from,User to) {
+/*
+	protected void mapUser(Usuarios from,Usuarios to) {
 		to.setUsername(from.getUsername());
 		to.setFirstName(from.getFirstName());
 		to.setLastName(from.getLastName());
@@ -91,15 +92,15 @@ public class UserServiceImpl implements UserService{
 	@Override
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public void deleteUser(Integer id) throws UsernameOrIdNotFound {
-		User user = getUserById(id);
+		Usuarios user = getUserById(id);
 		repository.delete(user);
 	}
 
 	
 	
 	@Override
-	public User changePassword(ChangePasswordForm form) throws Exception {
-		User user = getUserById(form.getId());
+	public Usuarios changePassword(ChangePasswordForm form) throws Exception {
+		Usuarios user = getUserById(form.getId());
 		
 		if ( !isLoggedUserADMIN() && !user.getPassword().equals(form.getCurrentPassword())) {
 			throw new Exception ("Current Password invalido.");
@@ -136,7 +137,7 @@ public class UserServiceImpl implements UserService{
 		return roles != null ? true : false;
 	}
 	
-	private User getLoggedUser() throws Exception {
+	private Usuarios getLoggedUser() throws Exception {
 		//Obtener el usuario logeado
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		
@@ -147,9 +148,9 @@ public class UserServiceImpl implements UserService{
 			loggedUser = (UserDetails) principal;
 		}
 		
-		User myUser = repository
+		Usuarios myUser = repository
 				.findByUsername(loggedUser.getUsername()).orElseThrow(() -> new Exception("Error obteniendo el usuario logeado desde la sesion."));
 		
 		return myUser;
 	}
-}
+}*/

@@ -1,4 +1,4 @@
-package idat.edu.pe.controller;
+/*package idat.edu.pe.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,10 +31,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import idat.edu.pe.dto.ChangePasswordForm;
 import idat.edu.pe.exception.CustomeFieldValidationException;
 import idat.edu.pe.exception.UsernameOrIdNotFound;
-import idat.edu.pe.modelo.Role;
-import idat.edu.pe.modelo.User;
-import idat.edu.pe.repositorio.RoleRepository;
-import idat.edu.pe.service.UserService;
+import idat.edu.pe.modelo.Rol;
+import idat.edu.pe.modelo.Usuarios;
+import idat.edu.pe.repositorio.RolRepositorio;
+import idat.edu.pe.service.UsuariosServicio;
 
 
 @Controller
@@ -44,10 +44,10 @@ public class UserController {
 	private final String TAB_LIST = "listTab";
 	
 	@Autowired
-	UserService userService;
+	UsuariosServicio usuarioServicio;
 	
 	@Autowired
-	RoleRepository roleRepository;
+	RolRepositorio rolRepositorio;
 	
 	@GetMapping({"/login"})
 	public String index() {
@@ -65,19 +65,19 @@ public class UserController {
 	
 	@GetMapping("/signup")
 	public String signup(Model model) {
-		Role userRole = roleRepository.findByName("USER");
-		List<Role> roles = Arrays.asList(userRole);
+		Rol userRole = rolRepositorio.findByName("USER");
+		List<Rol> roles = Arrays.asList(userRole);
 		
 		model.addAttribute("signup",true);
-		model.addAttribute("userForm", new User());
+		model.addAttribute("userForm", new Usuarios());
 		model.addAttribute("roles",roles);
 		return "user-form/user-signup";
 	}
 	
 	@PostMapping("/signup")
-	public String signupAction(@Valid @ModelAttribute("userForm")User user, BindingResult result, ModelMap model) {
-		Role userRole = roleRepository.findByName("USER");
-		List<Role> roles = Arrays.asList(userRole);
+	public String signupAction(@Valid @ModelAttribute("userForm")Usuarios user, BindingResult result, ModelMap model) {
+		Rol userRole = rolRepositorio.findByName("USER");
+		List<Rol> roles = Arrays.asList(userRole);
 		model.addAttribute("userForm", user);
 		model.addAttribute("roles",roles);
 		model.addAttribute("signup",true);
@@ -96,7 +96,7 @@ public class UserController {
 		return index();
 	}
 	
-	private void baseAttributerForUserForm(Model model, User user,String activeTab) {
+	private void baseAttributerForUserForm(Model model, Usuarios user,String activeTab) {
 		model.addAttribute("userForm", user);
 		model.addAttribute("userList", userService.getAllUsers());
 		model.addAttribute("roles",roleRepository.findAll());
@@ -106,18 +106,18 @@ public class UserController {
 	
 	@GetMapping("/userForm")
 	public String userForm(Model model) {
-		baseAttributerForUserForm(model, new User(), TAB_LIST );
+		baseAttributerForUserForm(model, new Usuarios(), TAB_LIST );
 		return "user-form/user-view";
 	}
 	
 	@PostMapping("/userForm")
-	public String createUser(@Valid @ModelAttribute("userForm")User user, BindingResult result, Model model) {
+	public String createUser(@Valid @ModelAttribute("userForm")Usuarios user, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			baseAttributerForUserForm(model, user, TAB_FORM);
 		}else {
 			try {
 				userService.createUser(user);
-				baseAttributerForUserForm(model, new User(), TAB_LIST );
+				baseAttributerForUserForm(model, new Usuarios(), TAB_LIST );
 				
 			} catch (CustomeFieldValidationException cfve) {
 				result.rejectValue(cfve.getFieldName(), null, cfve.getMessage());
@@ -132,7 +132,7 @@ public class UserController {
 	
 	@GetMapping("/editUser/{id}")
 	public String getEditUserForm(Model model, @PathVariable(name ="id")Integer id)throws Exception{
-		User userToEdit = userService.getUserById(id);
+		Usuarios userToEdit = userService.getUserById(id);
 
 		baseAttributerForUserForm(model, userToEdit, TAB_FORM );
 		model.addAttribute("editMode","true");
@@ -142,21 +142,21 @@ public class UserController {
 	}
 	
 	@PostMapping("/editUser")
-	public String postEditUserForm(@Valid @ModelAttribute("userForm")User user, BindingResult result, Model model) {
+	public String postEditUserForm(@Valid @ModelAttribute("userForm")Usuarios user, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			baseAttributerForUserForm(model, user, TAB_FORM );
 			model.addAttribute("editMode","true");
-			model.addAttribute("passwordForm",new ChangePasswordForm(user.getId()));
+			model.addAttribute("passwordForm",new ChangePasswordForm(user.getID_USUARIOS()));
 		}else {
 			try {
 				userService.updateUser(user);
-				baseAttributerForUserForm(model, new User(), TAB_LIST );
+				baseAttributerForUserForm(model, new Usuarios(), TAB_LIST );
 			} catch (Exception e) {
 				model.addAttribute("formErrorMessage",e.getMessage());
 				
 				baseAttributerForUserForm(model, user, TAB_FORM );
 				model.addAttribute("editMode","true");
-				model.addAttribute("passwordForm",new ChangePasswordForm(user.getId()));
+				model.addAttribute("passwordForm",new ChangePasswordForm(user.getID_USUARIOS()));
 			}
 		}
 		return "user-form/user-view";
@@ -197,5 +197,5 @@ public class UserController {
 	}
 	
 }
-
+*/
 
