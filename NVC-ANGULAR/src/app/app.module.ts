@@ -17,7 +17,6 @@ import { CursoListComponent } from "./cursos/components/curso-list/curso-list.co
 import { CursoCarritoComponent } from "./cursos/components/curso-carrito/curso-carrito.component";
 import { VerCarritoComponent } from "./cursos/components/ver-carrito/ver-carrito.component";
 import { MatDialogModule } from "@angular/material/dialog";
-import { PasarelaPagoComponent } from "./cursos/components/pasarela-pago/pasarela-pago.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Paso1CarritoComponent } from './cursos/components/ver-carrito/paso1-carrito/paso1-carrito.component';
 import { Paso2CarritoComponent } from './cursos/components/ver-carrito/paso2-carrito/paso2-carrito.component';
@@ -50,7 +49,6 @@ import { RouterModule } from "@angular/router";
     CursoListComponent,
     CursoCarritoComponent,
     VerCarritoComponent,
-    PasarelaPagoComponent,
     Paso1CarritoComponent,
     Paso2CarritoComponent,
     Paso3CarritoComponent,
@@ -72,7 +70,6 @@ import { RouterModule } from "@angular/router";
     MatDialogModule,
     /*routing,*/
   ],
-  entryComponents: [PasarelaPagoComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
