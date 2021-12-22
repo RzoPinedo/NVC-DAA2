@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "167bfff5-47ce-4d0b-ab68-87b24bbd03bd",
+		"name": "NVConsulting-GrupoA-Martes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar Usuarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/usuarios/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"usuarios",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Empleados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/empleados/empleados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"empleados",
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Empleado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/empleados/empleados/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"empleados",
+						"empleados",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Empleado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"estado\": \"1\",\r\n        \"correo\": \"maria@perez.com\",\r\n        \"dni\": \"44444444\",\r\n        \"telefono\": \"555555555\",\r\n        \"nombres\": \"Maria\",\r\n        \"direccion\": \"calle1\",\r\n        \"apellidos\": \"Perez\",\r\n        \"id_CARGO\": {\r\n            \"estado\": \"1\",\r\n            \"nombre\": \"ADMINISTRADOR\",\r\n            \"id_CARGO\": 1\r\n        }\r\n       \r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/empleados/empleados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"empleados",
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Empleado",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"estado\": \"1\",\r\n        \"correo\": \"maria@perez.com\",\r\n        \"dni\": \"44444444\",\r\n        \"telefono\": \"111111111\",\r\n        \"nombres\": \"Maria\",\r\n        \"direccion\": \"calle1\",\r\n        \"apellidos\": \"Quispe\",\r\n        \"id_CARGO\": {\r\n            \"estado\": \"1\",\r\n            \"nombre\": \"ADMINISTRADOR\",\r\n            \"id_CARGO\": 1\r\n        }\r\n       \r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/empleados/empleados/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"empleados",
+						"empleados",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Empleado",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/empleados/empleados/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"empleados",
+						"empleados",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cargos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/cargo/cargo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"cargo",
+						"cargo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cargo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/cargo/cargo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"cargo",
+						"cargo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cargo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estado\": \"1\",\r\n    \"nombre\": \"SUPERVISOR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/cargo/cargo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"cargo",
+						"cargo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Cargo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estado\": \"1\",\r\n    \"nombre\": \"SECRETARIA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/cargo/cargo/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"cargo",
+						"cargo",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Cargo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/NVConsulting/rest/cargo/cargo/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"NVConsulting",
+						"rest",
+						"cargo",
+						"cargo",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

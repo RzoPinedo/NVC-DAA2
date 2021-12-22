@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 import { Curso } from "../../model/curso";
 import { CarritoService } from "../../services/carrito.service";
+import { PasarelaPagoComponent } from "../pasarela-pago/pasarela-pago.component";
 
 @Component({
   selector: "app-ver-carrito",
